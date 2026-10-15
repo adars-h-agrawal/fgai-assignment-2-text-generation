@@ -1,0 +1,25 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Temporary logs and caches
+*.log
+.DS_Store
+
+# Model checkpoints and large local artifacts
+*.keras
+*.h5
+*.weights.h5
+checkpoints/
