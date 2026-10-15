@@ -1,0 +1,119 @@
+{
+  "assignment": "ICT4403 Foundations of Generative AI \u2014 Assignment 2",
+  "project_title": "Comparative Autoregressive Text Generation Using Simple RNN, Bidirectional RNN, LSTM and GRU",
+  "dataset": {
+    "dataset_name": "Shakespeare Plays",
+    "source_url": "https://www.kaggle.com/datasets/kingburrito666/shakespeare-plays",
+    "source_file": "Shakespeare_data.csv",
+    "source_column": "PlayerLine",
+    "csv_rows": 111396,
+    "nonempty_dialogue_lines": 111396,
+    "character_count": 4366287,
+    "token_count": 1002945,
+    "context_length": 24,
+    "vocabulary_size": 10000,
+    "train_examples": 50000,
+    "validation_examples": 10000,
+    "test_examples": 10000,
+    "split": "80% train / 10% validation / 10% test, chronological"
+  },
+  "configuration": {
+    "seed": 42,
+    "context_length": 24,
+    "vocabulary_size": 10000,
+    "embedding_dimension": 64,
+    "hidden_units": 96,
+    "batch_size": 256,
+    "maximum_epochs": 10,
+    "learning_rate": 0.001,
+    "temperatures": [
+      0.5,
+      1.0,
+      1.5
+    ],
+    "generation_seed_prompts": [
+      "to be or not to be that is the question",
+      "wherefore art thou romeo",
+      "all the world's a stage"
+    ]
+  },
+  "selection_metric": "Lowest validation loss",
+  "selected_model": "GRU",
+  "selected_model_validation_loss": 5.87440299987793,
+  "selected_model_test_loss": 5.729192733764648,
+  "model_results": [
+    {
+      "Model": "GRU",
+      "Parameters": 1989072,
+      "Best_Epoch": 3,
+      "Epochs_Trained": 6,
+      "Training_Time_Seconds": 14.84,
+      "Validation_Loss": 5.87440299987793,
+      "Validation_Accuracy": 0.12880000472068787,
+      "Validation_Perplexity": 355.8121773374975,
+      "Test_Loss": 5.729192733764648,
+      "Test_Accuracy": 0.12300000339746475,
+      "Test_Perplexity": 307.72075550704443
+    },
+    {
+      "Model": "LSTM",
+      "Parameters": 2004240,
+      "Best_Epoch": 4,
+      "Epochs_Trained": 7,
+      "Training_Time_Seconds": 20.16,
+      "Validation_Loss": 5.895956993103027,
+      "Validation_Accuracy": 0.13040000200271606,
+      "Validation_Perplexity": 363.5645982823187,
+      "Test_Loss": 5.739556312561035,
+      "Test_Accuracy": 0.1266999989748001,
+      "Test_Perplexity": 310.9264262228471
+    },
+    {
+      "Model": "SimpleRNN",
+      "Parameters": 1957872,
+      "Best_Epoch": 4,
+      "Epochs_Trained": 7,
+      "Training_Time_Seconds": 14.4,
+      "Validation_Loss": 5.908167362213135,
+      "Validation_Accuracy": 0.12729999423027039,
+      "Validation_Perplexity": 368.03106935974904,
+      "Test_Loss": 5.728740215301514,
+      "Test_Accuracy": 0.12280000001192093,
+      "Test_Perplexity": 307.58153768538074
+    },
+    {
+      "Model": "BidirectionalRNN",
+      "Parameters": 1985616,
+      "Best_Epoch": 3,
+      "Epochs_Trained": 6,
+      "Training_Time_Seconds": 15.7,
+      "Validation_Loss": 6.011996269226074,
+      "Validation_Accuracy": 0.12449999898672104,
+      "Validation_Perplexity": 408.2975791558689,
+      "Test_Loss": 5.865927219390869,
+      "Test_Accuracy": 0.11559999734163284,
+      "Test_Perplexity": 352.8091359653931
+    }
+  ],
+  "temperature_summary": [
+    {
+      "Temperature": 0.5,
+      "Distinct_1": 0.4444444444444445,
+      "Distinct_2": 0.8192090395480226,
+      "Repetition_Ratio": 0.5555555555555556
+    },
+    {
+      "Temperature": 1.0,
+      "Distinct_1": 0.7722222222222223,
+      "Distinct_2": 0.9957627118644069,
+      "Repetition_Ratio": 0.22777777777777777
+    },
+    {
+      "Temperature": 1.5,
+      "Distinct_1": 0.9305555555555555,
+      "Distinct_2": 1.0,
+      "Repetition_Ratio": 0.06944444444444446
+    }
+  ],
+  "sample_count": 36
+}

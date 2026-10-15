@@ -1,0 +1,16 @@
+{
+  "dataset_name": "Shakespeare Plays",
+  "source_url": "https://www.kaggle.com/datasets/kingburrito666/shakespeare-plays",
+  "source_file": "Shakespeare_data.csv",
+  "source_column": "PlayerLine",
+  "csv_rows": 111396,
+  "nonempty_dialogue_lines": 111396,
+  "character_count": 4366287,
+  "token_count": 1002945,
+  "context_length": 24,
+  "vocabulary_size": 10000,
+  "train_examples": 50000,
+  "validation_examples": 10000,
+  "test_examples": 10000,
+  "split": "80% train / 10% validation / 10% test, chronological"
+}
